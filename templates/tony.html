@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AVENGERS</title>
+</head>
+<body>
+<div style="text-align: center;"><h1><i>AVENGERS ASSEMBLE</i></h1></div>
+<form action= "/insert" method="POST">
+    <label>
+        <input type="text" name="c_name">
+    </label>
+    <button type="submit">Add</button>
+</form>
+Recent Member added: {{ c_name }}
+
+<div style="text-align: center;"><h1>Added MEMBER</h1></div>
+{% for i in my_list %}
+{{ i.c_id }} | {{ i.c_name }} <br> <a href="/delete/{{ i.c_id }}" >Delete</a> <br><br>
+{% endfor %}
+
+</body>
+</html>
