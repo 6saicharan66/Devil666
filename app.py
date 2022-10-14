@@ -24,14 +24,14 @@ def mcu2():
     new_c_name = Vengers(c_name=c_name)
     db.session.add(new_c_name)
     db.session.commit()
-    return redirect(url_for("MCU1"))
+    return redirect(url_for("mcu1"))
 
 
 @app.route("/delete/<int:c_id>")
 def delete(c_id):
     c_name = Vengers.query.get_or_404(c_id)
     db.session.delete(c_name)
-    return redirect(url_for("MCU1"))
+    return redirect(url_for("mcu1"))
 
 
 @app.route("/tony")
