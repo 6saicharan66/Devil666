@@ -17,7 +17,7 @@ jobs:
         python-version: ["3.9"]
     runs-on: ${{ matrix.platform }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.5.0
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4.3.0
       with:
@@ -34,8 +34,7 @@ jobs:
     - name: Push to docker Hub
       uses: docker/build-push-action@v3.2.0
       with: 
-        username: ${{ secrets.DOCKER_NAME }}
-        password: ${{ secrets.DOCKER_PSWD }}
+        token: ${{ secrets.MY_ACCESS_TOKEN }}
         repository: charanvk666/devopswithpy
-        tag_with_ref: true
+        ref: v1.0
         
