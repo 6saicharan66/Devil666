@@ -35,6 +35,6 @@ jobs:
       uses: docker/build-push-action@v3.2.0
       with: 
         token: ${{ secrets.MY_ACCESS_TOKEN }}
-        repository: charanvk666/devopswithpy
-        ref: v1.0
+        tags: charanvk666/devopswithpy
+        push: true
         
